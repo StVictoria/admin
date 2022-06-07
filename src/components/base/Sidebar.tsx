@@ -28,10 +28,10 @@ const links: ILink[] = [
   { id: 3, title: "Countries", Icon: PublicOutlinedIcon, link: "/countries" },
 ];
 
-const Link = forwardRef((props: NavLinkProps, ref): JSX.Element => <NavLink {...props} />)
+const Link = forwardRef((props: NavLinkProps, ref): JSX.Element => <NavLink {...props} />);
 
 const LinkContent = ({ title, Icon, link }: ILink): JSX.Element => (
-  <Button component={Link} to={link} sx={{ width: "100%", justifyContent: "flex-start" }}>
+  <Button component={Link} to={link} sx={{ width: "100%", justifyContent: "flex-start", "&.active": { color: "#10B981" } }}>
     {Icon && <Icon width={16} fill="#ffffff" />}
     <LinkTitle>{title}</LinkTitle>
   </Button>
