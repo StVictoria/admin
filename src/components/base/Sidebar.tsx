@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink, NavLinkProps } from "react-router-dom";
 import { Button, Drawer, ListItem } from "@mui/material";
-import RocketOutlinedIcon from '@mui/icons-material/RocketOutlined';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined';
 import { forwardRef } from "react";
@@ -23,15 +23,15 @@ interface ILink {
 }
 
 const links: ILink[] = [
-  { id: 1, title: "Cosmos", Icon: RocketOutlinedIcon, link: "/" },
-  { id: 2, title: "Advices", Icon: ExtensionOutlinedIcon, link: "/advice" },
-  { id: 3, title: "Countries", Icon: PublicOutlinedIcon, link: "/countries" },
+  { id: 1, title: "Popular", Icon: StarBorderIcon, link: "/" },
+  { id: 2, title: "Latest", Icon: ExtensionOutlinedIcon, link: "/latest" },
+  { id: 3, title: "Upcoming", Icon: PublicOutlinedIcon, link: "/upcoming" },
 ];
 
 const Link = forwardRef((props: NavLinkProps, ref): JSX.Element => <NavLink {...props} />);
 
 const LinkContent = ({ title, Icon, link }: ILink): JSX.Element => (
-  <Button component={Link} to={link} sx={{ width: "100%", justifyContent: "flex-start", "&.active": { color: "#10B981" } }}>
+  <Button component={Link} to={link} sx={{ width: "100%", justifyContent: "flex-start", "&.active": { color: "#10B981", backgroundColor: "rgba(255,255,255, 0.08)" } }}>
     {Icon && <Icon width={16} fill="#ffffff" />}
     <LinkTitle>{title}</LinkTitle>
   </Button>

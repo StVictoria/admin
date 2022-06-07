@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from "@reduxjs/toolkit";
-import countriesReducer from "./countriesReducer";
+import popularReducer from './popularReducer';
 
 const rootReducer = combineReducers({
-  countriesState: countriesReducer,
+  popularState: popularReducer,
 });
 
 export default rootReducer;

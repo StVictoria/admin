@@ -1,13 +1,13 @@
+import { Upcoming } from '@mui/icons-material';
 import React from 'react';
 import {
   Routes,
   Route,
 } from "react-router-dom";
-import Advice from './advice/Advice';
 import './App.scss';
 import Sidebar from './base/Sidebar';
-import Cosmos from './cosmos/Cosmos';
-import Countries from './countries/Countries';
+import Latest from './people/Latest';
+import Popular from './films/Popular';
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
       <Sidebar />
       <main>
         <Routes>
-          <Route path="/" element={<Cosmos />} />
-          <Route path="/advice" element={<Advice />} />
-          <Route path="/countries" element={<Countries />} />
+          <Route path="/" element={<Popular />} />
+          <Route path="/latest" element={<Latest />} />
+          <Route path="/upcoming" element={<Upcoming />} />
         </Routes>
       </main>
     </div>
